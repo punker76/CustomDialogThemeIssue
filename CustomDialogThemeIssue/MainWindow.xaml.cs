@@ -12,18 +12,18 @@ namespace CustomDialogThemeIssue
             DataContext = this;
         }
 
-        private void ShowClick(object sender, RoutedEventArgs e)
+        private async void ShowClick(object sender, RoutedEventArgs e)
         {
             var dlg = (CustomDialog) Resources["CustomDialogTest"];
 
-            DialogCoordinator.Instance.ShowMetroDialogAsync(this, dlg);
+            await DialogCoordinator.Instance.ShowMetroDialogAsync(this, dlg);
         }
 
-        private void CloseClick(object sender, RoutedEventArgs e)
+        private async void CloseClick(object sender, RoutedEventArgs e)
         {
             var dlg = (CustomDialog)Resources["CustomDialogTest"];
 
-            DialogCoordinator.Instance.HideMetroDialogAsync(this, dlg);
+            await DialogCoordinator.Instance.HideMetroDialogAsync(this, dlg);
         }
 
         private void LightThemeChosen(object sender, RoutedEventArgs e)
